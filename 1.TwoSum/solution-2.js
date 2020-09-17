@@ -1,13 +1,18 @@
 /**
  * Big O notation of this solution,
  * best case O(1),
- * worst and average case O(n).
+ * worst and average case O(n*2).
  */
 const twoSum = (array = [], target = 0) => {
   const map = new Map();
+
+  for (let i = 0; i < array.length; i++) map.set(array[i], i);
+
   for (let i = 0; i < array.length; i++) {
-    if (map.has(target - array[i])) return [map.get(target - array[i]), i];
-    map.set(array[i], i);
+    if (map.has(array[i] - target)) {
+      const index = map.get(array[i] - target);
+      if (index !== i) return [i, index];
+    }
   }
 };
 
