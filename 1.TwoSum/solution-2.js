@@ -1,6 +1,6 @@
 /**
  * Big O notation of this solution,
- * best case O(1),
+ * best case O(n),
  * worst and average case O(n*2).
  */
 const twoSum = (array = [], target = 0) => {
